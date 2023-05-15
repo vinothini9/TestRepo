@@ -55,12 +55,16 @@ namespace MyFirstWebApi.Controllers
             
         }
         [HttpDelete]
-        public string DeleteProduct(int id)
+        public string DeleteProduct(int productid)
         {
-           product = productDBEntities.Products.Find(id);
+           product = productDBEntities.Products.Find(productid);
             productDBEntities.Products.Remove(product);
             productDBEntities.SaveChanges();
             return "The Product is deleted";
+        }
+        public string Message()
+        {
+            return "HelloWorld";
         }
     }
 }
